@@ -8,8 +8,20 @@ function input
    do
         echo "Please enter your guess"
         read guess
-        echo "You entered: $guess"
+        guessans $guess
    done
 }
-
+function guessans
+{
+    if [[ $1 -lt $num ]]
+    then
+        echo "Value is low"
+    elif [[ $1 -gt $num ]]
+    then
+        echo "Value is high"
+    else
+        echo "Your guess is correct!"
+    fi
+}
 input
+
